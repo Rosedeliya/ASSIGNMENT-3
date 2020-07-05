@@ -68,7 +68,7 @@ for i in 1:7
     domainsSet[i] =[random[domainsSet[i]]]
     if constrained(variables[i], variables[j]) == true      #Forward-Check
     domainsSet[j] = setdiff(domainsSet[j], domainsSet[i])  
-    elseif constrained(variables[i], variables[j]) == false #propagation
+    elseif (constrained(variables[i], variables[j]) == false) && (length(domainsSet[j]) >> 1) #propagation
       domainsSet[j]  = domainsSet[i]
     end
   end
