@@ -37,25 +37,25 @@ dWA = dNT = dQT = dSA = dNSW = dV = dT = ["blue", "green", "red"]
 domainsSet = [dWA, dNT, dQT, dSA, dNSW, dV, dT]
 
 #A function that describes the constraints: Returns true if two chosen states are neigbours
- function constrained(a, b)
-        if (a !=b )
-        if (a||b == "WA") && (a||b == "NT") 
+ function constrained()
+        if (variables[i] != variables[j])
+        if (variables[i] == "WA") && (variables[j] == "NT") 
         return true
-        elseif (a||b == "WA") && (a||b == "SA")
+        elseif (variables[i] == "WA") && (variables[j] == "SA")
         return true
-        elseif (a||b == "NT") && (a||b == "SA")
+        elseif (variables[i] == "NT") && (variables[j] == "SA")
         return true
-        elseif (a||b == "NT") && (a||b == "Q")
+        elseif (variables[i] == "NT") && (variables[j] == "Q")
         return true
-        elseif (a||b == "SA") && (a||b == "Q")
+        elseif (variables[i] == "SA") && (variables[j] == "Q")
         return true
-        elseif (a||b == "SA") && (a||b == "NSW")
+        elseif (variables[i] == "SA") && (variables[j] == "NSW")
         return true
-        elseif (a||b == "SA") && (a||b == "V")
+        elseif (variables[i] == "SA") && (variables[j] == "V")
         return true
-        elseif (a||b == "Q") && (a||b == "NSW")
+        elseif (variables[i] == "Q") && (variables[j] == "NSW")
         return true
-        elseif (a||b == "NSW") && (a||b == "V")
+        elseif (variables[i] == "NSW") && (variables[j] == "V")
         return true
         else
         return false
