@@ -66,9 +66,9 @@ domainsSet = [dWA, dNT, dQT, dSA, dNSW, dV, dT]
 for i in 1:7
   for j in 2:7
     domainsSet[i] =[random[domainsSet[i]]]
-    if constrained(variables[i], variables[j]) == true      #Forward-Check
+    if constrained() == true      #Forward-Check
     domainsSet[j] = setdiff(domainsSet[j], domainsSet[i])  
-    elseif (constrained(variables[i], variables[j]) == false) && (length(domainsSet[j]) >> 1) #propagation
+    elseif (constrained() == false) && (length(domainsSet[j]) >> 1) #propagation
       domainsSet[j]  = domainsSet[i]
     end
   end
